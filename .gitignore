@@ -1,0 +1,9 @@
+# deps
+node_modules
+
+# config
+.env
+
+# generated
+cache
+.DS_Store

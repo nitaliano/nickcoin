@@ -1,0 +1,22 @@
+{
+  "name": "nickcoin",
+  "version": "1.0.0",
+  "description": "Nicks Dev Coin",
+  "scripts": {
+    "build": "./node_modules/.bin/waffle",
+    "deploy": "./node_modules/.bin/ts-node ./scripts/deploy.ts",
+    "test": "NODE_ENV=test && mocha"
+  },
+  "author": "Nick Italiano",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.2.2",
+    "ethers": "^5.0.31",
+    "mocha": "^8.3.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  }
+}
