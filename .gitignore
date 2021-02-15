@@ -6,4 +6,5 @@ node_modules
 
 # generated
 cache
+testnet_wallets
 .DS_Store

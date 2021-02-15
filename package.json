@@ -5,6 +5,7 @@
   "scripts": {
     "build": "./node_modules/.bin/waffle",
     "deploy": "./node_modules/.bin/ts-node ./scripts/deploy.ts",
+    "create:wallet": "./node_modules/.bin/ts-node ./scripts/create_wallet.ts",
     "test": "NODE_ENV=test && mocha"
   },
   "author": "Nick Italiano",

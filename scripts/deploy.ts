@@ -1,21 +1,13 @@
 require('dotenv').config();
 
-const fs = require('fs');
-const { ethers } = require('ethers');
+import { getContractFactory } from './contract_factory';
+import { contractOwner } from './provider';
 
 const CONTRACT_NAME = 'NickCoinERC20';
 const TOTAL_SUPPLY = 21000000;
 
-const provider = new ethers.providers.InfuraProvider(
-  process.env.ETH_NETWORK,
-  process.env.INFURA_PROJECT_ID,
-);
-
-const signer = new ethers.Wallet(process.env.SIGNER_PRIVATE_KEY, provider);
-
 async function main() {
-  const { abi, bytecode } = JSON.parse(fs.readFileSync(`./build/${CONTRACT_NAME}.json`));
-  const factory = new ethers.ContractFactory(abi, bytecode, signer);
+  const factory = getContractFactory({ contractName: CONTRACT_NAME, signer: contractOwner });
   
   console.log(`Attempting to deploy ${CONTRACT_NAME}`);
   const contract = await factory.deploy(TOTAL_SUPPLY);
